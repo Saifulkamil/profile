@@ -189,30 +189,42 @@ class ProfileView extends GetView<ProfileController> {
             left: 0,
             right: 0,
             child: Center(
-              child: Stack(
-                children: [
-                  Obx(() => CircleAvatar(
-                        radius: 60,
-                        backgroundImage: controller.isprofilepath.value
-                            // Cek apakah ada path gambar yang dipilih
-                            ? FileImage(
-                                    File(controller.profilepathpicture.value))
-                                as ImageProvider
-                            // Jika tidak ada gambar yang dipilih, tampilkan gambar default
-                            : NetworkImage(
-                                "https://example.com/default_profile_picture.jpg"),
-                        backgroundColor: grey2Color, // Warna background
-                        child: controller.profilepathpicture.value.isEmpty
-                            ? const Icon(Icons.person,
-                                size: 50, color: Colors.black)
-                            : null,
-                      )),
-                  Positioned(
-                      bottom: -15,
-                      right: -10,
-                      child: IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
+              child: InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      builder: (BuildContext context) {
+                        return WidgetPickPicture(controller: controller);
+                      });
+                },
+                child: Stack(
+                  children: [
+                    Obx(() => CircleAvatar(
+                          radius: 60,
+                          backgroundImage: controller.isprofilepath.value
+                              // Cek apakah ada path gambar yang dipilih
+                              ? FileImage(
+                                      File(controller.profilepathpicture.value))
+                                  as ImageProvider
+                              // Jika tidak ada gambar yang dipilih, tampilkan gambar default
+                              : NetworkImage(
+                                  "https://example.com/default_profile_picture.jpg"),
+                          backgroundColor: grey2Color, // Warna background
+                          child: controller.profilepathpicture.value.isEmpty
+                              ? const Icon(Icons.person,
+                                  size: 50, color: Colors.black)
+                              : null,
+                        )),
+                    Positioned(
+                        bottom: -15,
+                        right: -10,
+                        child: IconButton(
+                            onPressed: () {
+                              showModalBottomSheet(
                                 context: context,
                                 isScrollControlled: true,
                                 shape: RoundedRectangleBorder(
@@ -221,14 +233,16 @@ class ProfileView extends GetView<ProfileController> {
                                 builder: (BuildContext context) {
                                   return WidgetPickPicture(
                                       controller: controller);
-                                });
-                          },
-                          icon: Icon(
-                            Icons.camera_alt,
-                            size: 45,
-                            color: greenMainColor,
-                          )))
-                ],
+                                },
+                              );
+                            },
+                            icon: Icon(
+                              Icons.camera_alt,
+                              size: 45,
+                              color: greenMainColor,
+                            )))
+                  ],
+                ),
               ),
             ),
           ),
