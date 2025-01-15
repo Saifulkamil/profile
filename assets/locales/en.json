@@ -1,0 +1,16 @@
+{
+  "title":"DigiAgri",
+  "menuInfo" : "Account Info",
+  "menuSynchronous" : "Update Data",
+  "menuAbout" : "About DigiAgri",
+  "menuContact" : "Kontak Administrator",
+  "menuBluetooth" : "BT Printer",
+  "menuClear" : "Clear Transaction",
+  "menuLogout" : "Logout",
+
+  "version": "Version",
+  "save": "Save",
+  "cancel": "Cancel",
+
+  "tes" : "tes"
+}

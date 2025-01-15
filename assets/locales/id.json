@@ -1,0 +1,19 @@
+{
+  "title":"DigiAgri",
+
+  "menuHead1" : "App Data Setup",
+  "menuHead2" : "Other Settings",
+  "menuInfo" : "Akun Info",
+  "menuSynchronous" : "Update Data",
+  "menuAbout" : "Tentang DigiAgri",
+  "menuContact" : "Kontak Administrator",
+  "menuBluetooth" : "BT Printer",
+  "menuClear" : "Hapus Transaksi",
+  "menuLogout" : "Logout",
+
+  "version": "Versi",
+  "save": "Simpan",
+  "cancel": "Batal",
+
+  "tes" : "tes"
+}
